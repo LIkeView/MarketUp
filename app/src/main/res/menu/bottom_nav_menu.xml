@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_event"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="Event" />
+
+    <item
+        android:id="@+id/navigation_winner_list"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="Winner_List" />
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/ic_person_black_24dp"
+        android:title="Profile" />
+
+</menu>

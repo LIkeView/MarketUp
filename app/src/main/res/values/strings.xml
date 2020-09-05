@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MarketUp</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="title_home">Home</string>
+
+</resources>
