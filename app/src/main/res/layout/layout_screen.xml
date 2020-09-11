@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff">
+    xmlns:card_view="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -12,6 +12,108 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.56882256" />
+
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:id="@+id/card_intro"-->
+<!--        android:visibility="visible"-->
+<!--        card_view:cardElevation="3dp"-->
+<!--        android:layout_marginTop="150dp"-->
+<!--        app:cardCornerRadius="10dp"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        tools:ignore="MissingConstraints">-->
+<!--        <RelativeLayout-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_width="200dp"-->
+<!--            android:layout_height="200dp"-->
+
+<!--            android:background="@drawable/rounded_rec_img_shape_bk"-->
+<!--            android:id="@+id/main"-->
+<!--            tools:ignore="MissingConstraints">-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/intro_img"-->
+<!--                android:layout_width="fill_parent"-->
+<!--                android:layout_height="fill_parent"-->
+<!--                android:src="@color/Black"/>-->
+
+<!--        </RelativeLayout>-->
+<!--    </androidx.cardview.widget.CardView>-->
+<!--    <EditText-->
+<!--        android:visibility="invisible"-->
+<!--        android:id="@+id/editTextYourName"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="25dp"-->
+<!--        android:layout_marginTop="42dp"-->
+<!--        android:layout_marginEnd="25dp"-->
+<!--        android:background="@drawable/edittext_background"-->
+<!--        android:hint="Your Name"-->
+<!--        android:inputType="textPersonName"-->
+<!--        android:padding="15dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/card_intro" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/editTextFirmName"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="25dp"-->
+<!--        android:layout_marginTop="12dp"-->
+<!--        android:layout_marginEnd="25dp"-->
+<!--        android:background="@drawable/edittext_background"-->
+<!--        android:hint="Whats your name?"-->
+<!--        android:inputType="textPersonName"-->
+<!--        android:padding="15dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/editTextYourName" />-->
+<!--    <EditText-->
+<!--        android:id="@+id/editTextFirmMobileNumber"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="25dp"-->
+<!--        android:layout_marginTop="12dp"-->
+<!--        android:layout_marginEnd="25dp"-->
+<!--        android:background="@drawable/edittext_background"-->
+<!--        android:hint="Whats your name?"-->
+<!--        android:inputType="textPersonName"-->
+<!--        android:padding="15dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/editTextFirmName" />-->
+
+    <!--    <EditText-->
+<!--        android:id="@+id/editTextYourName"-->
+<!--        android:visibility="visible"-->
+<!--        android:lineSpacingExtra="16dp"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="32dp"-->
+<!--        android:layout_marginLeft="32dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_marginEnd="32dp"-->
+<!--        android:layout_marginRight="32dp"-->
+<!--        android:layout_marginBottom="350dp"-->
+<!--        android:hint="Your Name"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/card_intro"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.13" />-->
+
+
+
+
+
 
     <TextView
         android:id="@+id/intro_title"
@@ -22,7 +124,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="8dp"
-        android:text="TextView"
+        android:text="Firm Name"
         android:textColor="@color/intro_title_color"
         android:textSize="32dp"
         android:textStyle="bold"
@@ -31,6 +133,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
+    <EditText
+        android:visibility="invisible"
+        android:id="@+id/editTextId"
+        android:lineSpacingExtra="16dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="108dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/intro_title"
+        app:layout_constraintVertical_bias="0.13" />
     <TextView
         android:lineSpacingExtra="16dp"
         android:id="@+id/intro_description"
@@ -38,7 +159,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:layout_marginBottom="8dp"
@@ -50,17 +171,6 @@
         app:layout_constraintTop_toBottomOf="@+id/intro_title"
         app:layout_constraintVertical_bias="0.13" />
 
-    <ImageView
-        android:id="@+id/intro_img"
-        android:layout_width="wrap_content"
-        android:layout_height="222dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/intro_title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

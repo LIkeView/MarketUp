@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#00a5ff</color>
-    <color name="colorPrimaryDark">#00a5ff</color>
+    <color name="colorPrimaryDark">#F9C70C</color>
     <color name="colorAccent">#03DAC5</color>
 
 
@@ -21,12 +21,14 @@
 
     <!--colors for modern ui-->
     <color name="whiteTextColor">#fff</color>
-    <color name="primaryTextColor">#00a5ff</color>
+    <color name="primaryTextColor">#F9C70C</color>
     <color name="loginBkColor">#f0f0f0</color>
 
     <!--colros for card-->
     <color name="whiteCardColor">#fff</color>
     >
+    <color name="yello_1">#FFDD3C</color>
+    <color name="yello_2">#FFea61</color>
 
     <color name="dark">#FF222222</color>
     <color name="light">#FFEEEEEE</color>

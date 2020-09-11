@@ -5,21 +5,19 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.marketup.ImageViewActivity;
-import com.example.marketup.MainActivity;
 import com.example.marketup.R;
 import com.example.marketup.models.EventDetail;
 import com.example.marketup.models.SubfilesWithUserDetailHistory;
 import com.example.marketup.models.UserList;
 import com.squareup.picasso.Picasso;
-import com.zolad.zoominimageview.ZoomInImageView;
 
 import java.util.ArrayList;
 
@@ -66,7 +64,6 @@ public class NavHomeAdapter extends RecyclerView.Adapter<NavHomeAdapter.UsersVie
 
             }
         } );
-        holder.textUserName.setText( subfilesWithUserDetailHistories.get( position ).getName() );
         Picasso.with( context ).load( subfilesWithUserDetailHistories.get( position ).getSubFilePath() ).fit().centerCrop().into( holder.imgProjHome );
 //        Glide.with(context).load(subfilesWithUserDetailHistories.get(position).getSubFilePath()).into(holder.imgProjHome);
     }
@@ -78,19 +75,13 @@ public class NavHomeAdapter extends RecyclerView.Adapter<NavHomeAdapter.UsersVie
 
     class UsersViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textUserName,textvoted,textVoteCount ;
-        ZoomInImageView imgProjHome;
+        ImageView imgProjHome;
         LinearLayout linearlayoutvotebutton;
 //        Button btnHomeView;
         public UsersViewHolder(View itemView) {
             super(itemView);
 
-            linearlayoutvotebutton = itemView.findViewById(R.id.linearlayoutvotebutton);
-            textUserName = itemView.findViewById(R.id.textUserName);
-            textvoted = itemView.findViewById(R.id.textvoted);
-            textVoteCount = itemView.findViewById(R.id.textVoteCount);
-//            textMaxuser = itemView.findViewById(R.id.textMaxuser);
-            imgProjHome = itemView.findViewById( R.id.imgProjHome );
+            imgProjHome = itemView.findViewById( R.id.image1 );
 
         }
     }

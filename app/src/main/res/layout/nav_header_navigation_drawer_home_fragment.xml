@@ -3,8 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="168dp"
-    android:background="@color/primaryTextColor"
+    android:layout_height="270dp"
+    android:background="@drawable/gradient_style"
     android:theme="@style/ThemeOverlay.AppCompat.Dark"
     android:orientation="vertical"
     android:gravity="bottom"
@@ -12,7 +12,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/ic_nav_bk"/>
+        />
 
 
 
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
-        android:layout_marginTop="45dp">
+        android:layout_marginTop="100dp">
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imgUserProfilePhoto"
             android:layout_width="70dp"
@@ -35,13 +35,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/nav_header_vertical_spacing"
-            android:text="Name"
+            android:text="Darshan Kasundra"
             android:gravity="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/nav_header_subtitle"
+            android:text="darshan.likeview@gmail.com"
             android:id="@+id/textView" />
 
     </LinearLayout>

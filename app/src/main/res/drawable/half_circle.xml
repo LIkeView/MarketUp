@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:height="50dp">
+        <shape>
+            <solid android:color="@color/White" />
+        </shape>
+    </item>
+    <item android:top="-500dp" android:bottom="350dp" android:left="-100dp" android:right="-100dp">
+        <shape>
+            <corners android:radius="500dp" />
+            <gradient android:startColor="@color/primaryTextColor"
+                android:centerColor="@color/yello_1"
+                android:endColor="@color/yello_2" />        </shape>
+    </item>
+</layer-list>

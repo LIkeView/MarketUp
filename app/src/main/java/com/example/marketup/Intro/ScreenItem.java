@@ -3,12 +3,10 @@ package com.example.marketup.Intro;
 public class ScreenItem {
 
     String Title,Description;
-    int ScreenImg;
 
-    public ScreenItem(String title, String description, int screenImg) {
+    public ScreenItem(String title, String description) {
         Title = title;
         Description = description;
-        ScreenImg = screenImg;
     }
 
     public void setTitle(String title) {
@@ -19,9 +17,6 @@ public class ScreenItem {
         Description = description;
     }
 
-    public void setScreenImg(int screenImg) {
-        ScreenImg = screenImg;
-    }
 
     public String getTitle() {
         return Title;
@@ -31,7 +26,4 @@ public class ScreenItem {
         return Description;
     }
 
-    public int getScreenImg() {
-        return ScreenImg;
-    }
 }
