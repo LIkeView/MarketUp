@@ -24,8 +24,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.marketup.R;
+import com.example.marketup.Tools.AutoFitGridLayoutManager;
 import com.example.marketup.Tools.CheckNetwork;
 import com.example.marketup.adapter.NavHomeAdapter;
+import com.example.marketup.adapter.NavSaveAdapter;
 import com.example.marketup.api.Api;
 import com.example.marketup.api.RetrofitClient;
 import com.example.marketup.models.ApiResponse;
@@ -41,7 +43,7 @@ import retrofit2.Response;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NavHomeFragment extends Fragment {
+public class NavSaveFragment extends Fragment {
 
     RecyclerView rcvallSubFileList;
     Context context;
@@ -52,7 +54,7 @@ public class NavHomeFragment extends Fragment {
     NavigationView navigationView;
     TextView navUserName;
     ImageView backButton;
-    LinearLayoutManager manager;
+    AutoFitGridLayoutManager manager;
 
     Boolean isScrolling = false;
     int currentItems, totalItems, scrollOutItems;
@@ -60,7 +62,7 @@ public class NavHomeFragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_nav_home, container, false);
+        return inflater.inflate(R.layout.fragment_nav_save, container, false);
     }
 
     @Override
@@ -72,7 +74,7 @@ public class NavHomeFragment extends Fragment {
         rcvallSubFileList = view.findViewById( R.id.rcvallSubFileList );
 //        navUserName  = view.findViewById( R.id.navUserName );
 
-                manager = new LinearLayoutManager( getActivity() );
+                manager = new AutoFitGridLayoutManager( getActivity() ,3);
         rcvallSubFileList.setLayoutManager( manager );
 //        SharedPrefManager sfm = SharedPrefManager.getInstance(getActivity());
 //        ProfileDetail pd = sfm.getUser();
@@ -167,7 +169,7 @@ public class NavHomeFragment extends Fragment {
             public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
                 if (response.body().getResCode() == 1) {
                     ArrayList<SubfilesWithUserDetailHistory> subfilesWithUserDetailHistories = (ArrayList<SubfilesWithUserDetailHistory>) response.body().getResData().getSubfilesWithUserDetailHistory();
-                    rcvallSubFileList.setAdapter(new NavHomeAdapter(getActivity(), subfilesWithUserDetailHistories));
+                    rcvallSubFileList.setAdapter(new NavSaveAdapter(getActivity(), subfilesWithUserDetailHistories));
                 }
                 else
                 {

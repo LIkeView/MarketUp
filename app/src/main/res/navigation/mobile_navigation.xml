@@ -13,21 +13,21 @@
 
     <fragment
         android:id="@+id/navigation_event"
-        android:name="com.example.marketup.Fragment.NavHomeFragment"
-        android:label="event list"
+        android:name="com.example.marketup.Fragment.NavSaveFragment"
+        android:label="Save"
         tools:layout="@layout/fragment_nav_home" />
 
     <fragment
-        android:id="@+id/navigation_winner_list"
-        android:name="com.example.marketup.Fragment.NavHomeFragment"
+        android:id="@+id/navigation_select_layout"
+        android:name="com.example.marketup.Fragment.NavSelectLayout"
         android:label="winner list"
-        tools:layout="@layout/fragment_nav_home" />
+        tools:layout="@layout/fragment_nav_select_layout" />
 
     <fragment
         android:id="@+id/navigation_coustome_design"
-        android:name="com.example.marketup.Fragment.NavCoustomIamge"
+        android:name="com.example.marketup.Fragment.NavSelectLayout"
         android:label="winner list"
-        tools:layout="@layout/fragment_nav_coustom_iamge" />
+        tools:layout="@layout/fragment_nav_select_layout" />
 
     <fragment
         android:id="@+id/navigation_profile"

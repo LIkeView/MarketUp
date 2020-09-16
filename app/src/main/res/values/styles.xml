@@ -5,12 +5,15 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:homeAsUpIndicator">@drawable/ic_arrow_back_ios_24</item>
     </style>
     <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/whiteCardColor</item>
         <item name="colorPrimaryDark">@color/LightSlateGray</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/colorPrimaryDark</item>
+        <item name="android:homeAsUpIndicator">@drawable/ic_arrow_back_ios_24</item>
+
     </style>
 
     <style name="AppTheme.Drawer">
@@ -40,7 +43,13 @@
 
 
     </style>
-
+    <style name="Style_toolbar_TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/White</item>
+        <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Headline</item>
+    </style>
     <style name="loginParent" parent="parent">
         <item name="android:layout_height">match_parent</item>
         <item name="android:background">@color/loginBkColor</item>
@@ -52,7 +61,7 @@
         <item name="android:layout_gravity">center</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_weight">1</item>
-        <item name="android:background">@drawable/check_box_white</item>
+        <item name="android:background">@drawable/check_box_blue</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
 

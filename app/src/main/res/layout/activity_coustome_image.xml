@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center">
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="3dp">
+            <include
+                layout="@layout/app_bar_coustome_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="61dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="3dp">
+            <ImageView
+                android:id="@+id/imageviewSetOrNot"
+                android:layout_width="1081px"
+                android:layout_height="1081px"/>
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="1081px"
+                android:id="@+id/main">
+                <ImageView
+                    android:id="@+id/image1"
+                    android:layout_width="1081px"
+                    android:layout_height="1081px"/>
+
+                <!--            Logo-->
+                <ImageView
+                    android:layout_marginLeft="20px"
+                    android:layout_marginTop="20px"
+                    android:id="@+id/imageviewLogo"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/lorex" />
+                <!--            Product Type-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="36px"
+                    android:text="Product Type"
+                    android:textStyle="bold"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="10sp"/>
+                <!--            Product Type-->
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="72px"
+                    android:text="Product Name"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="9sp"/>
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100px"
+                    android:text="Product size"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="9sp"/>
+
+                <TextView
+                    android:id="@+id/textViewYourName"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Name"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="36px"
+                    android:layout_marginTop="36px"
+                    android:textStyle="bold"
+                    android:textSize="10sp" />
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="36px"
+                    android:layout_marginTop="72px"
+                    android:text="9510202224"
+                    android:textSize="9sp"/>
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Coustomer Care "
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="36px"
+                    android:layout_marginTop="100px"
+                    android:textStyle="bold"
+                    android:textSize="9sp"/>
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="36px"
+                    android:layout_marginTop="150px"
+                    android:text="9879785703"
+                    android:textSize="9sp"/>
+
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="35dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="www.pateldarshan5381.com"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignWithParentIfMissing="true"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/txtTitle"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="www.4foxwebsolution.com"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignWithParentIfMissing="true"
+                    android:textSize="10sp" />
+
+
+                <TextView
+                    android:id="@+id/txtTitle2"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4foxwebsolution@gmail.com"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignWithParentIfMissing="true"
+                    android:textSize="10sp"/>
+
+                <TextView
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Address 1,Address 1,Address 1,Address 1,Address 1,Address 1,"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignWithParentIfMissing="true"
+                    android:textSize="10sp"/>
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+        <ScrollView
+            android:id="@+id/isScrollView"
+            android:layout_marginTop="1320px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <RelativeLayout
+                        android:id="@+id/relativeLayoutLogo"
+                        style="@style/coustome_relativelayout_for_box">
+                        <TextView
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Logo"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayoutYourName"
+                        style="@style/coustome_relativelayout_for_box"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp">
+                        <TextView
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Your Name"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayoutFirmName"
+                        android:background="@drawable/check_box_white"
+                        style="@style/coustome_relativelayout_for_box">
+                        <TextView
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Firm Name"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <RelativeLayout
+                        android:id="@+id/relativeLayoutYourEmail"
+                        android:background="@drawable/check_box_white"
+
+                        style="@style/coustome_relativelayout_for_box">
+                        <TextView
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Your Email"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayoutFirmEmail"
+                        style="@style/coustome_relativelayout_for_box"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp">
+
+                        <TextView
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Firm Email"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayoutYourPhoneNumber"
+                        style="@style/coustome_relativelayout_for_box">
+
+                        <TextView
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Your Contect"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <RelativeLayout
+                        android:id="@+id/relativeLayoutFirmPhoneNumber"
+                        style="@style/coustome_relativelayout_for_box">
+                        <TextView
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Firm Number"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayoutWebsite"
+                        style="@style/coustome_relativelayout_for_box"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp">
+
+                        <TextView
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Website"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayoutSocialIcon"
+                        style="@style/coustome_relativelayout_for_box">
+
+                        <TextView
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Social Icon"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    >
+                    <RelativeLayout
+                        android:id="@+id/relativeLayoutProductName"
+                        android:background="@drawable/check_box_white"
+
+                        style="@style/coustome_relativelayout_for_box">
+
+                        <TextView
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Product Name"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayoutProductType"
+                        android:background="@drawable/check_box_white"
+
+                        style="@style/coustome_relativelayout_for_box"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp">
+
+                        <TextView
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Product Type"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayoutProductSize"
+                        android:background="@drawable/check_box_white"
+                        style="@style/coustome_relativelayout_for_box">
+
+                        <TextView
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Product Size"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    >
+                    <RelativeLayout
+                        android:id="@+id/relativeLayoutAdddress"
+                        style="@style/coustome_relativelayout_for_box">
+
+                        <TextView
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Address"/>
+
+                    </RelativeLayout>
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+
+</RelativeLayout>

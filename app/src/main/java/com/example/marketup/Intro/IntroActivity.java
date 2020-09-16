@@ -335,7 +335,6 @@ public class IntroActivity extends AppCompatActivity implements View.OnClickList
                     loaddLastScreen();
                     //third page invisibal
                     linearLayoutPrivew.setVisibility( View.INVISIBLE );
-
                     edtiTextProduct.setVisibility( View.INVISIBLE );
                     edtiTextProductType.setVisibility( View.INVISIBLE );
                     editTextProductSize.setVisibility( View.INVISIBLE );
@@ -456,9 +455,6 @@ public class IntroActivity extends AppCompatActivity implements View.OnClickList
             case PICK_IMAGE:
                 if (resultCode == RESULT_OK) {
                     uri = data.getData();
-//                    this.moveimage = uri;
-//                    String path = uri.getPath();
-//                    this.sub_file_path = path;
                     try {
                         bitmap = MediaStore.Images.Media.getBitmap( getContentResolver(), uri );
 

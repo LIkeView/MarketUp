@@ -1,6 +1,7 @@
 package com.example.marketup.adapter;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,8 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
-import android.widget.ViewFlipper;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -30,22 +29,22 @@ import java.util.ArrayList;
 //import net.simplifiedcoding.retrofitandroidtutorial.models.User;
 //import com.aswdc.archdaily.models.UserDetail;
 
-public class NavHomeAdapter extends RecyclerView.Adapter<NavHomeAdapter.UsersViewHolder> {
+public class SaveListAdapter extends RecyclerView.Adapter<SaveListAdapter.UsersViewHolder> {
 
 
-    private Activity context;
+    private Context context;
     private ArrayList<SubfilesWithUserDetailHistory> subfilesWithUserDetailHistories;
     private ArrayList<UserList> userLists;
     int eventID;
 
-    public NavHomeAdapter(Activity context, ArrayList<SubfilesWithUserDetailHistory> subfilesWithUserDetailHistories) {
+    public SaveListAdapter(Activity context, ArrayList<SubfilesWithUserDetailHistory> subfilesWithUserDetailHistories) {
         this.context = context;
         this.subfilesWithUserDetailHistories = subfilesWithUserDetailHistories;
     }
     @NonNull
     @Override
     public UsersViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate( R.layout.recyclerview_home, parent, false);
+        View view = LayoutInflater.from(context).inflate( R.layout.recyclerview_save_list, parent, false);
         return new UsersViewHolder(view);
     }
 

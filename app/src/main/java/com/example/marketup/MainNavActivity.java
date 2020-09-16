@@ -1,8 +1,10 @@
 package com.example.marketup;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,6 +44,7 @@ public class MainNavActivity extends AppCompatActivity implements NavigationView
     LinearLayoutManager manager;
 
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
@@ -51,13 +54,14 @@ public class MainNavActivity extends AppCompatActivity implements NavigationView
 
         Toolbar toolbar;
         TextView toolbartext;
-        toolbar=  findViewById( R.id.toolbar);
-        toolbartext=  findViewById(R.id.toolbartext);
+        toolbar = findViewById( R.id.toolbar);
+        toolbartext =  findViewById(R.id.toolbartext);
 
+        toolbartext.setText( "Daily Branding" );
         drawerLayout= findViewById(R.id.drawer_layout);
         navigationView= findViewById(R.id.nav_view);
 
-        //        set nevigation drawer
+        //set nevigation drawer
 
         actionBarDrawerToggle = new ActionBarDrawerToggle( MainNavActivity.this,drawerLayout,toolbar, R.string.open,R.string.close );
         drawerLayout.addDrawerListener( actionBarDrawerToggle );
@@ -66,9 +70,9 @@ public class MainNavActivity extends AppCompatActivity implements NavigationView
         navigationView.setNavigationItemSelectedListener( this );
 
         BottomNavigationView navigationView = findViewById( R.id.bottom_nav );
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_event, R.id.navigation_winner_list,R.id.navigation_profile)
-                .build();
+//        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
+//                R.id.navigation_home, R.id.navigation_event, R.id.navigation_select_layout,R.id.navigation_profile)
+//                .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
 //        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);

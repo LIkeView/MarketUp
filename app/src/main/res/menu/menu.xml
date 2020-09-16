@@ -4,7 +4,7 @@
     <item
         android:id="@+id/menu_home"
         android:icon="@drawable/ic_home"
-        android:title="Arch"
+        android:title="Subscription"
         />
     <item
         android:id="@+id/menu_event"
@@ -14,12 +14,20 @@
     <item
         android:id="@+id/menu_users"
         android:icon="@drawable/ic_users"
-        android:title="Users"
+        android:title="Rate"
         />
     <item
         android:id="@+id/menu_settings"
         android:icon="@drawable/ic_person_black_24dp"
-        android:title="Settings"
+        android:title="Share"
+        />
+    <item
+        android:icon="@drawable/ic_person_black_24dp"
+        android:title="About"
+        />
+    <item
+        android:icon="@drawable/ic_person_black_24dp"
+        android:title="Logout"
         />
 
 </menu>

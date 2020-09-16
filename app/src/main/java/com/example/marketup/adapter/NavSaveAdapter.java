@@ -8,13 +8,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
-import android.widget.ViewFlipper;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.marketup.Activity.SaveListActivity;
 import com.example.marketup.ImageViewActivity;
 import com.example.marketup.R;
 import com.example.marketup.models.EventDetail;
@@ -30,29 +29,29 @@ import java.util.ArrayList;
 //import net.simplifiedcoding.retrofitandroidtutorial.models.User;
 //import com.aswdc.archdaily.models.UserDetail;
 
-public class NavHomeAdapter extends RecyclerView.Adapter<NavHomeAdapter.UsersViewHolder> {
+public class NavSaveAdapter extends RecyclerView.Adapter<NavSaveAdapter.UsersViewHolder> {
 
 
     private Activity context;
     private ArrayList<SubfilesWithUserDetailHistory> subfilesWithUserDetailHistories;
-    private ArrayList<UserList> userLists;
-    int eventID;
+    int selecteditem;
 
-    public NavHomeAdapter(Activity context, ArrayList<SubfilesWithUserDetailHistory> subfilesWithUserDetailHistories) {
+    public NavSaveAdapter(Activity context, ArrayList<SubfilesWithUserDetailHistory> subfilesWithUserDetailHistories) {
         this.context = context;
         this.subfilesWithUserDetailHistories = subfilesWithUserDetailHistories;
     }
     @NonNull
     @Override
     public UsersViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate( R.layout.recyclerview_home, parent, false);
+        View view = LayoutInflater.from(context).inflate( R.layout.recyclerview_save, parent, false);
         return new UsersViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull UsersViewHolder holder, int position ) {
         EventDetail eventDetail = new EventDetail();
-//        UserDetail userDetail = new UserDetail();
+
+
         int margin = dpTopx( 88 );
 
 
@@ -62,9 +61,10 @@ public class NavHomeAdapter extends RecyclerView.Adapter<NavHomeAdapter.UsersVie
             holder.imageviewMain.setOnClickListener( new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent( context, ImageViewActivity.class );
+                    selecteditem = holder.getAdapterPosition();
+                    Intent intent = new Intent( context, SaveListActivity.class );
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
+                    intent.putExtra( "select", selecteditem);
                     intent.putExtra( "image", subfilesWithUserDetailHistories.get(position).getSubFilePath());
 //                intent.putExtra( userDetail.getUserId(), listEvents.get(position).getEventId());
 //                intent.putExtra( String.valueOf( pd.getUserId() ), listEvents.get(position).getEventId());
@@ -109,7 +109,6 @@ public class NavHomeAdapter extends RecyclerView.Adapter<NavHomeAdapter.UsersVie
             relativeLayoutMain = itemView.findViewById( R.id.relativeLayoutMain );
             imageviewMain = itemView.findViewById( R.id.imageviewMain );
             imageviewLogo = itemView.findViewById( R.id.imageviewLogo );
-
         }
     }
 }

@@ -2,6 +2,7 @@ package com.example.marketup.Fragment;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -17,15 +18,17 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.example.marketup.Activity.CoustomeImageActivity;
 import com.example.marketup.R;
+import com.example.marketup.Tools.AutoFitGridLayoutManager;
 import com.example.marketup.Tools.CheckNetwork;
-import com.example.marketup.adapter.NavHomeAdapter;
+import com.example.marketup.adapter.NavSelectAdapter;
 import com.example.marketup.api.Api;
 import com.example.marketup.api.RetrofitClient;
 import com.example.marketup.models.ApiResponse;
@@ -41,9 +44,10 @@ import retrofit2.Response;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NavHomeFragment extends Fragment {
+public class NavSelectLayout extends Fragment {
 
     RecyclerView rcvallSubFileList;
+    CardView cardViewCoustomeLayoutButton;
     Context context;
     SwipeRefreshLayout swipeHome;
     DrawerLayout drawerLayout;
@@ -52,7 +56,7 @@ public class NavHomeFragment extends Fragment {
     NavigationView navigationView;
     TextView navUserName;
     ImageView backButton;
-    LinearLayoutManager manager;
+    AutoFitGridLayoutManager manager;
 
     Boolean isScrolling = false;
     int currentItems, totalItems, scrollOutItems;
@@ -60,7 +64,7 @@ public class NavHomeFragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_nav_home, container, false);
+        return inflater.inflate(R.layout.fragment_nav_select_layout, container, false);
     }
 
     @Override
@@ -72,32 +76,24 @@ public class NavHomeFragment extends Fragment {
         rcvallSubFileList = view.findViewById( R.id.rcvallSubFileList );
 //        navUserName  = view.findViewById( R.id.navUserName );
 
-                manager = new LinearLayoutManager( getActivity() );
-        rcvallSubFileList.setLayoutManager( manager );
-//        SharedPrefManager sfm = SharedPrefManager.getInstance(getActivity());
-//        ProfileDetail pd = sfm.getUser();
+        cardViewCoustomeLayoutButton = view.findViewById( R.id.cardViewCoustomeLayoutButton );
 
-//        navUserName.setText( pd.getCity() );
+        cardViewCoustomeLayoutButton.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent( getActivity(), CoustomeImageActivity.class );
+                startActivity( intent );
+            }
+        } );
+
+        manager = new AutoFitGridLayoutManager( context, 2 );
+        rcvallSubFileList.setLayoutManager( manager );
 
         // Toolbar
 
         TextView toolbartext;
         toolbar=  view.findViewById( R.id.toolbar);
         toolbartext=  view.findViewById(R.id.toolbartext);
-//        toolbartext.setText( "Daily Branding" );
-
-//        FInd ID
-//
-//        drawerLayout= view.findViewById(R.id.drawer_layout);
-//        navigationView= view.findViewById(R.id.nav_view);
-
-//        set nevigation drawer
-
-//        actionBarDrawerToggle = new ActionBarDrawerToggle( getActivity(),drawerLayout,toolbar, R.string.open,R.string.close );
-//        drawerLayout.addDrawerListener( actionBarDrawerToggle );
-//        actionBarDrawerToggle.setDrawerIndicatorEnabled( true );
-//        actionBarDrawerToggle.syncState();
-//        navigationView.setNavigationItemSelectedListener( this );
 
         if(CheckNetwork.isInternetAvailable(getActivity())) //returns true if internet available
         {
@@ -109,14 +105,10 @@ public class NavHomeFragment extends Fragment {
             Toast.makeText(getActivity(),"No Internet Connection", Toast.LENGTH_LONG).show();
         }
 
-//        method calling
-
     }
 
 //      create method
-
     void initReference() {
-//        set Progress Dialog
         rcvallSubFileList.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
@@ -148,7 +140,7 @@ public class NavHomeFragment extends Fragment {
             @Override
             public void onRefresh() {
                 getData();
-                new Handler(  ).postDelayed( new Runnable() {
+                new Handler().postDelayed( new Runnable() {
                     @Override
                     public void run() {
                         swipeHome.setRefreshing( false );
@@ -167,7 +159,7 @@ public class NavHomeFragment extends Fragment {
             public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
                 if (response.body().getResCode() == 1) {
                     ArrayList<SubfilesWithUserDetailHistory> subfilesWithUserDetailHistories = (ArrayList<SubfilesWithUserDetailHistory>) response.body().getResData().getSubfilesWithUserDetailHistory();
-                    rcvallSubFileList.setAdapter(new NavHomeAdapter(getActivity(), subfilesWithUserDetailHistories));
+                    rcvallSubFileList.setAdapter(new NavSelectAdapter(getActivity(), subfilesWithUserDetailHistories));
                 }
                 else
                 {
