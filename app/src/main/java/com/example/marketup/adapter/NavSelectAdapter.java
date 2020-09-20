@@ -2,9 +2,11 @@ package com.example.marketup.adapter;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -51,6 +53,24 @@ public class NavSelectAdapter extends RecyclerView.Adapter<NavSelectAdapter.User
         EventDetail eventDetail = new EventDetail();
 //        UserDetail userDetail = new UserDetail();
         int margin = dpTopx( 88 );
+        RelativeLayout.LayoutParams layoutParamsrelativeLayoutMain = (RelativeLayout.LayoutParams) holder.relativeLayoutMain.getLayoutParams();
+//        layoutParamsrelativeLayoutMain.height =
+//                holder.relativeLayoutMain.getWidth();
+        final ViewTreeObserver observer= holder.relativeLayoutMain.getViewTreeObserver();
+        observer.addOnGlobalLayoutListener(
+                new ViewTreeObserver.OnGlobalLayoutListener() {
+                    @Override
+                    public void onGlobalLayout() {
+                        Log.d("Log", "Height: " + holder.relativeLayoutMain.getHeight());
+                        int layoutWith = holder.relativeLayoutMain.getWidth();
+                        RelativeLayout.LayoutParams layoutParamsrelativeLayoutMain = (RelativeLayout.LayoutParams) holder.relativeLayoutMain.getLayoutParams();
+                        layoutParamsrelativeLayoutMain.height = layoutWith;
+                    }
+                });
+
+//        Log.d("Log1", "Height: " + layoutWith);
+
+//        Log.d( "11111",""+holder.relativeLayoutMain.getMeasuredWidth() );
         RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) holder.imageviewLogo.getLayoutParams();
         layoutParams.setMarginStart(  10 );
 

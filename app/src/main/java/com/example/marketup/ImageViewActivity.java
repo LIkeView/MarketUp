@@ -6,7 +6,10 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +22,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.squareup.picasso.Picasso;
 
+import java.io.File;
+import java.io.FileOutputStream;
+
 public class ImageViewActivity extends AppCompatActivity {
 
     private RelativeLayout mainLayout;
@@ -28,6 +34,8 @@ public class ImageViewActivity extends AppCompatActivity {
     ImageView imgResultImage;
     Button btnConvertToImage;
     private Button button;
+    String ImagePath;
+    Uri URI;
     private int xDelta;
     private int yDelta;
     ImageView image1;
@@ -60,7 +68,18 @@ public class ImageViewActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Bitmap image = getBitmapFromView(mainLayout);
-                imgResultImage.setImageBitmap(image);
+//                imgResultImage.setImageBitmap(image);
+
+                ImagePath = MediaStore.Images.Media.insertImage(
+                        getContentResolver(),
+                        image,
+                        "Day Name",
+                        "Day Discription"
+                );
+
+                URI = Uri.parse(ImagePath);
+                Toast.makeText(ImageViewActivity.this, "Image Saved Successfully", Toast.LENGTH_LONG).show();
+
 
             }
         });
@@ -267,4 +286,6 @@ public class ImageViewActivity extends AppCompatActivity {
             }
         };
     }
+
+
 }

@@ -15,6 +15,7 @@ public class AutoFitGridLayoutManager extends GridLayoutManager {
         super(context, 1);
 
         setSpanCount(columnWidth);
+
     }
 
 

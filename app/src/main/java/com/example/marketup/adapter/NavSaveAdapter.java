@@ -2,9 +2,11 @@ package com.example.marketup.adapter;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -54,7 +56,19 @@ public class NavSaveAdapter extends RecyclerView.Adapter<NavSaveAdapter.UsersVie
 
         int margin = dpTopx( 88 );
 
+        final ViewTreeObserver observer= holder.relativeLayoutMain.getViewTreeObserver();
+        observer.addOnGlobalLayoutListener(
+                new ViewTreeObserver.OnGlobalLayoutListener() {
+                    @Override
+                    public void onGlobalLayout() {
+                        int layoutWith = holder.relativeLayoutMain.getWidth();
+                        Log.d("Log", "width: " + layoutWith);
+                        RelativeLayout.LayoutParams layoutParamsrelativeLayoutMain = (RelativeLayout.LayoutParams) holder.relativeLayoutMain.getLayoutParams();
+                        layoutParamsrelativeLayoutMain.height = layoutWith;
+                        Log.d("Log", "height: " + layoutParamsrelativeLayoutMain.height);
 
+                    }
+                });
             RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) holder.imageviewLogo.getLayoutParams();
             layoutParams.setMarginStart(  88 );
 
